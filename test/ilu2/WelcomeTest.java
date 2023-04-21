@@ -7,13 +7,11 @@ import org.junit.jupiter.api.Test;
 
 class WelcomeTest {
 
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void premier_test() {
+		assertEquals("Hello, Bob", Welcome.welcome("bob"));
+		assertEquals("Hello, Gilles", Welcome.welcome("gilles"));
+		assertEquals("Hello, Marie", Welcome.welcome("marie"));
 	}
-
+	
 }
