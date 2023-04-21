@@ -14,4 +14,12 @@ class WelcomeTest {
 		assertEquals("Hello, Marie", Welcome.welcome("marie"));
 	}
 	
+	@Test
+	void test_welcome_rien() {
+		assertEquals("Hello, my friend", Welcome.welcome(null));
+		assertEquals("Hello, my friend", Welcome.welcome(""));
+		assertEquals("Hello, my friend", Welcome.welcome("   "));
+		
+	}
+	
 }
