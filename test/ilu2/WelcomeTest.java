@@ -8,14 +8,14 @@ import org.junit.jupiter.api.Test;
 class WelcomeTest {
 
 	@Test
-	void premier_test() {
+	void premierTest() {
 		assertEquals("Hello, Bob", Welcome.welcome("bob"));
 		assertEquals("Hello, Gilles", Welcome.welcome("gilles"));
 		assertEquals("Hello, Marie", Welcome.welcome("marie"));
 	}
 	
 	@Test
-	void test_welcome_rien() {
+	void testWelcomeRien() {
 		assertEquals("Hello, my friend", Welcome.welcome(null));
 		assertEquals("Hello, my friend", Welcome.welcome(""));
 		assertEquals("Hello, my friend", Welcome.welcome("   "));
@@ -23,9 +23,17 @@ class WelcomeTest {
 	}
 	
 	@Test
-	void test_majuscule() {
+	void testMajuscule() {
 		assertEquals("HELLO, JERRY !", Welcome.welcome("JERRY"));
 		assertEquals("HELLO, BOB !", Welcome.welcome("BOB"));
 		assertEquals("HELLO, MARIE !", Welcome.welcome("MARIE"));
 	}
+	
+	@Test
+	void testDeuxNoms() {
+		assertEquals("Hello, Amy, Bob", Welcome.welcome("amy bob"));
+		assertEquals("Hello, Marie, Gilles", Welcome.welcome("marie gilles"));
+		
+	}
+	
 }

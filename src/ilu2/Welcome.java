@@ -12,17 +12,21 @@ public class Welcome {
 	}
 	
 	private static String getLowerOutput(String input) {
-		if (inputEmpty(input))
-			return "my friend";
-		else
 			return input.substring(0, 1).toUpperCase() + input.substring(1);
 		}
 
 	
 	public static String welcome(String input) {
+		if (inputEmpty(input))
+			return "Hello, my friend";
+		
 		StringBuilder sb = new StringBuilder();
 		
-		if (!inputEmpty(input) && inputMaj(input))
+		String[] noms = input.split(" ");
+		
+		if (noms.length == 2)
+			sb.append("Hello, " + getLowerOutput(noms[0]) + ", " + getLowerOutput(noms[1]));
+		else if (inputMaj(input))
 			sb.append("HELLO, " + input + " !");
 		else
 			sb.append("Hello, " + getLowerOutput(input));
