@@ -7,12 +7,26 @@ public class Welcome {
 		
 	}
 	
-	public static String welcome(String input) {
-		StringBuilder sb = new StringBuilder("Hello, ");
+	private static boolean inputMaj(String input) {
+		return input.equals(input.toUpperCase());
+	}
+	
+	private static String getLowerOutput(String input) {
 		if (inputEmpty(input))
-			sb.append("my friend");
+			return "my friend";
 		else
-			sb.append(input.substring(0, 1).toUpperCase() + input.substring(1));
+			return input.substring(0, 1).toUpperCase() + input.substring(1);
+		}
+
+	
+	public static String welcome(String input) {
+		StringBuilder sb = new StringBuilder();
+		
+		if (!inputEmpty(input) && inputMaj(input))
+			sb.append("HELLO, " + input + " !");
+		else
+			sb.append("Hello, " + getLowerOutput(input));
+
 		return sb.toString();		
 	}
 }

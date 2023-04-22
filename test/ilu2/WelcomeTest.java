@@ -22,4 +22,10 @@ class WelcomeTest {
 		
 	}
 	
+	@Test
+	void test_majuscule() {
+		assertEquals("HELLO, JERRY !", Welcome.welcome("JERRY"));
+		assertEquals("HELLO, BOB !", Welcome.welcome("BOB"));
+		assertEquals("HELLO, MARIE !", Welcome.welcome("MARIE"));
+	}
 }
