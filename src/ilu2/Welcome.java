@@ -22,14 +22,17 @@ public class Welcome {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		String[] noms = input.split(" ");
+		String[] noms = input.split(",");
 		
-		if (noms.length == 2)
-			sb.append("Hello, " + getLowerOutput(noms[0]) + ", " + getLowerOutput(noms[1]));
-		else if (inputMaj(input))
+		if (noms.length == 1 && inputMaj(input))
 			sb.append("HELLO, " + input + " !");
-		else
-			sb.append("Hello, " + getLowerOutput(input));
+		
+		else {
+			sb.append("Hello");
+			for(int i = 0; i < noms.length; i++)
+				sb.append(", " + getLowerOutput(noms[i]));
+		}
+		
 
 		return sb.toString();		
 	}

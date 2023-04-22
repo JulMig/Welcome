@@ -31,9 +31,14 @@ class WelcomeTest {
 	
 	@Test
 	void testDeuxNoms() {
-		assertEquals("Hello, Amy, Bob", Welcome.welcome("amy bob"));
-		assertEquals("Hello, Marie, Gilles", Welcome.welcome("marie gilles"));
+		assertEquals("Hello, Amy, Bob", Welcome.welcome("amy,bob"));
+		assertEquals("Hello, Marie, Gilles", Welcome.welcome("marie,gilles"));
 		
+	}
+	
+	@Test
+	void testPlusieursNoms() {
+		assertEquals("Hello, Amy, Bob, Jerry", Welcome.welcome("Amy,bob,jerry"));
 	}
 	
 }
