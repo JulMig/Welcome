@@ -41,4 +41,9 @@ class WelcomeTest {
 		assertEquals("Hello, Amy, Bob, Jerry", Welcome.welcome("Amy,bob,jerry"));
 	}
 	
+	@Test
+	void testCriPlusieursNoms() {
+		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", Welcome.welcome("Amy,BOB,jerry"));
+	}
+	
 }

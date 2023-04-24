@@ -24,16 +24,26 @@ public class Welcome {
 		
 		String[] noms = input.split(",");
 		
-		if (noms.length == 1 && inputMaj(input))
-			sb.append("HELLO, " + input + " !");
+		StringBuilder sbMin  = new StringBuilder();
+		StringBuilder sbMax = new StringBuilder();
 		
-		else {
-			sb.append("Hello");
-			for(int i = 0; i < noms.length; i++)
-				sb.append(", " + getLowerOutput(noms[i]));
+		for(String nom : noms) {
+			if (inputMaj(nom))
+				sbMax.append(", " + nom);
+			else
+				sbMin.append(", " + getLowerOutput(nom));
 		}
 		
-
+		if (sbMin.length() != 0) {
+			sb.append("Hello" + sbMin.toString());
+			if (sbMax.length() != 0) 
+				sb.append(". AND ");
+			else
+				return sb.toString();
+		}
+		
+		sb.append("HELLO" + sbMax.toString() + " !");
+		
 		return sb.toString();		
 	}
 }
