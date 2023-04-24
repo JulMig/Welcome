@@ -52,4 +52,9 @@ class WelcomeTest {
 		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !", Welcome.welcome("bob,AMY,jerry,JACK"));
 	}
 	
+	@Test
+	void testSupressionEspace() {
+		assertEquals("Hello, Bob and Amy", Welcome.welcome("bob     ,amy   "));
+	}
+	
 }

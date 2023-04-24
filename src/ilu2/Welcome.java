@@ -35,6 +35,10 @@ public class Welcome {
 		return sb.toString();
 	}
 	
+	private static String deleteSpace(String name) {
+		return name.strip();
+	}
+	
 	private static void initMinMaxName(String [] listName) {
 		int countMaj = 0;
 		for(String name : listName)
@@ -49,10 +53,10 @@ public class Welcome {
 		
 		for(String name : listName) {
 			if(inputMaj(name)) {
-				majName[maj] = name;
+				majName[maj] = deleteSpace(name);
 				maj++;
 			} else {
-				minName[min] = name;
+				minName[min] = deleteSpace(name);
 				min++;
 			}
 		}
